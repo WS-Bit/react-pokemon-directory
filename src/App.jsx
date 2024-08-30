@@ -1,22 +1,8 @@
 import React, { useState } from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { MDBBtn, MDBContainer } from 'mdb-react-ui-kit';
 import 'mdb-ui-kit'
 import './App.css'
-
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-});
 
 function PokemonFinder() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -62,9 +48,8 @@ function PokemonFinder() {
   
 
   return (
-    <ThemeProvider theme={theme}>
     <div>
-      <h2>Pokémon Finder</h2>
+      <h1>Pokémon Finder</h1>
       <TextField 
         id="outlined-basic"
         label="Pokemon name or ID" 
@@ -85,14 +70,14 @@ function PokemonFinder() {
 
       
       {pokemonData && (
-        <div class='pokemon-screen'>
+        <div className='pokemon-screen'>
           <h3>{pokemonData.name}</h3>
           <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
           <img src={pokemonData.sprites.front_shiny} alt={pokemonData.name} />
           <p>Height: {pokemonData.height}</p>
           <p>Weight: {pokemonData.weight}</p>
           <p>Types: {pokemonData.types.map(typeInfo => typeInfo.type.name).join(', ')}</p>
-          <ul class="stat-list">
+          <ul className="stat-list">
             {pokemonData.stats.map(statInfo => (
             <li key={statInfo.stat.name}>{statInfo.stat.name}: {statInfo.base_stat}</li>
             ))}
@@ -101,7 +86,6 @@ function PokemonFinder() {
         </div>
       )}
     </div>
-    </ThemeProvider>
   );
 }
     

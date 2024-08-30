@@ -3,6 +3,18 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  transform: scale(1.2); 
+  transform-origin: top left;
+}
+
+h1 {
+  font-weight: 800;
+  background-image: url('./src/assets/pokemon-sprites.png');
+  background-size: 470px;
+  background-position: center;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 body {
@@ -12,7 +24,9 @@ body {
 
 .pokemon-screen {
   background-color: aliceblue;
-
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #search {
