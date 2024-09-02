@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar';
 import PokemonDropdown from './components/PokemonDropdown';
 import PokemonDetails from './components/PokemonDetails';
 import { ToastContainer, toast } from 'react-toastify';
+import Button from '@mui/material/Button';
 import 'react-toastify/dist/ReactToastify.css';
 
 function PokemonFinder() {
@@ -65,10 +66,13 @@ function PokemonFinder() {
   };
 
   const handleTeamAdd = () => {
-    if (pokemonData && !chosenTeam.some(pokemon => pokemon.id === pokemonData.id)) {
+    if (chosenTeam.length >= 6) {
+      toast.warn('Cannot add more than 6 to your team!');
+      return;
+    } else if (pokemonData && !chosenTeam.some(pokemon => pokemon.id === pokemonData.id)) {
       setChosenTeam(prevTeam => [...prevTeam, pokemonData]);
     } else {
-      toast.warn('This Pokémon is already in your team or no Pokémon selected.');
+      toast.warn('This Pokémon is already in your team!');
     }
   };
 
@@ -114,7 +118,7 @@ function PokemonFinder() {
           ))}
         </div>
         {pokemonData && (
-          <button onClick={handleTeamAdd}>Add to Team</button>
+          <Button variant="contained" onClick={handleTeamAdd}>Add to Team</Button>
         )}
       </div>
       <ToastContainer />

@@ -62,6 +62,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   text-align: center;
+  -webkit-text-stroke: 1px black;
 }
 
 .builder-title {
@@ -73,6 +74,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   text-align: center;
+  -webkit-text-stroke: 1px black;
 }
 
 .stat-list {
