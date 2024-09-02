@@ -29,7 +29,7 @@ body {
   max-width: calc(50% - 0.5rem); 
 }
 
-.pokemon-team-maker {
+.pokemon-team-builder {
   background-color: aliceblue;
   padding: 1rem;
   border-radius: 8px;
@@ -64,7 +64,7 @@ body {
   text-align: center;
 }
 
-.maker-title {
+.builder-title {
   font-weight: 800;
   background-image: url('https://external-preview.redd.it/tanpwWIhgfV7dljvjnPXlqp38ow0txtDjoHKDlSsf84.png?auto=webp&s=6656884e0a8dc8bfff17c62c5ed810e34c15f323');
   background-size: 670px;
@@ -83,4 +83,23 @@ body {
 
 .stat-list li {
   margin-bottom: 8px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.team-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team-item img {
+  width: 100px;
+  height: 100px;
 }
