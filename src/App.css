@@ -1,11 +1,40 @@
+body {
+  background-color: aliceblue;
+  color: black;
+  display: flex; 
+  justify-content: flex-start; 
+  padding: 2rem; 
+}
+
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   padding: 2rem;
   text-align: center;
 }
 
-h1 {
+.pokemon-finder {
+  background-color: aliceblue;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem; 
+  margin-left: 0;
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; 
+  gap: 1rem; 
+  margin-bottom: 1.5rem;
+}
+
+.pokemon-screen {
+  align-items: center;
+}
+
+.finder-title {
   font-weight: 800;
   background-image: url('https://external-preview.redd.it/tanpwWIhgfV7dljvjnPXlqp38ow0txtDjoHKDlSsf84.png?auto=webp&s=6656884e0a8dc8bfff17c62c5ed810e34c15f323');
   background-size: 470px;
@@ -13,38 +42,13 @@ h1 {
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-}
-
-body {
-  background-color: aliceblue;
-  color: black;
-}
-
-.pokemon-screen {
-  background-color: aliceblue;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 1rem; /* Adds space between the search area and result display */
-}
-
-/* Flexbox container for the search bar, button, and dropdown */
-.search-container {
-  display: flex;
-  justify-content: center; /* Center the items horizontally */
-  align-items: center; /* Align items vertically in the center */
-  gap: 1rem; /* Adds spacing between the items */
-  margin-bottom: 1.5rem; /* Adds space below the container */
-}
-
-#search {
-  margin: 0; /* Remove existing margin */
+  text-align: center;
 }
 
 .stat-list {
-  list-style-type: none; 
+  list-style-type: none;
   padding: 0;
-  margin: 0; 
+  margin: 0;
 }
 
 .stat-list li {
