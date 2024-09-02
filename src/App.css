@@ -2,7 +2,7 @@ body {
   background-color: aliceblue;
   color: black;
   display: flex; 
-  justify-content: flex-start; 
+  justify-content: space-between; 
   padding: 2rem; 
 }
 
@@ -11,6 +11,11 @@ body {
   margin: 0;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  justify-content: space-between; 
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 0 2rem; 
 }
 
 .pokemon-finder {
@@ -20,6 +25,19 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 1rem; 
   margin-left: 0;
+  flex: 1; 
+  max-width: calc(50% - 0.5rem); 
+}
+
+.pokemon-team-maker {
+  background-color: aliceblue;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem; 
+  margin-left: 0;
+  flex: 1; 
+  max-width: calc(50% - 0.5rem); 
 }
 
 .search-container {
@@ -28,6 +46,7 @@ body {
   align-items: center; 
   gap: 1rem; 
   margin-bottom: 1.5rem;
+  
 }
 
 .pokemon-screen {
@@ -38,6 +57,17 @@ body {
   font-weight: 800;
   background-image: url('https://external-preview.redd.it/tanpwWIhgfV7dljvjnPXlqp38ow0txtDjoHKDlSsf84.png?auto=webp&s=6656884e0a8dc8bfff17c62c5ed810e34c15f323');
   background-size: 470px;
+  background-position: center;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: center;
+}
+
+.maker-title {
+  font-weight: 800;
+  background-image: url('https://external-preview.redd.it/tanpwWIhgfV7dljvjnPXlqp38ow0txtDjoHKDlSsf84.png?auto=webp&s=6656884e0a8dc8bfff17c62c5ed810e34c15f323');
+  background-size: 670px;
   background-position: center;
   color: transparent;
   -webkit-background-clip: text;

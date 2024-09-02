@@ -12,7 +12,7 @@ function PokemonFinder() {
   const [error, setError] = useState('');
   const [pokemonNames, setPokemonNames] = useState([]);
 
-  // Fetch list of Pokémon names
+  //! Fetch list of Pokémon names
   useEffect(() => {
     const fetchPokemonNames = async () => {
       try {
@@ -58,23 +58,32 @@ function PokemonFinder() {
   };
 
   return (
-    <div id="root" className="pokemon-finder">
-      <h1 className="finder-title">Pokémon Finder</h1>
-      <div className="search-container">
-        <SearchBar
-          searchTerm={searchTerm}
-          onInputChange={handleInputChange}
-          onSearch={handleSearch}
-        />
-        <PokemonDropdown
-          searchTerm={searchTerm}
-          pokemonNames={pokemonNames}
-          onSelectChange={handleSelectChange}
-        />
-      </div>
+    <div id="root">
+      <div className="pokemon-finder">
+        <h1 className="finder-title">Pokémon Finder</h1>
+        <div className="search-container">
+          <SearchBar
+            searchTerm={searchTerm}
+            onInputChange={handleInputChange}
+            onSearch={handleSearch}
+          />
+          <PokemonDropdown
+            searchTerm={searchTerm}
+            pokemonNames={pokemonNames}
+            onSelectChange={handleSelectChange}
+          />
+        </div>
 
-      {pokemonData && <PokemonDetails pokemonData={pokemonData} />}
-      {error && <p className="error">{error}</p>}
+        {pokemonData && <PokemonDetails pokemonData={pokemonData} />}
+        {error && <p className="error">{error}</p>}
+      </div>
+      <div className='pokemon-team-maker'>
+        <h1 className='maker-title'>Pokémon Team Maker</h1>
+
+
+
+
+      </div>
     </div>
   );
 }
