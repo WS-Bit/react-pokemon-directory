@@ -25,10 +25,20 @@ body {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem; /* Adds space between the search area and result display */
+}
+
+/* Flexbox container for the search bar, button, and dropdown */
+.search-container {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Align items vertically in the center */
+  gap: 1rem; /* Adds spacing between the items */
+  margin-bottom: 1.5rem; /* Adds space below the container */
 }
 
 #search {
-  margin: 17px;
+  margin: 0; /* Remove existing margin */
 }
 
 .stat-list {
@@ -40,5 +50,3 @@ body {
 .stat-list li {
   margin-bottom: 8px;
 }
-
-
