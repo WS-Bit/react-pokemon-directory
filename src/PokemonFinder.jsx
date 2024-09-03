@@ -1,11 +1,12 @@
+// PokemonFinder.jsx
 import React, { useState, useEffect } from 'react';
 import 'mdb-ui-kit';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import PokemonDropdown from './components/PokemonDropdown';
 import PokemonDetails from './components/PokemonDetails';
+import PokemonTeamBuilder from './components/PokemonTeamBuilder';
 import { ToastContainer, toast } from 'react-toastify';
-import Button from '@mui/material/Button';
 import 'react-toastify/dist/ReactToastify.css';
 
 function PokemonFinder() {
@@ -70,10 +71,17 @@ function PokemonFinder() {
       toast.warn('Cannot add more than 6 to your team!');
       return;
     } else if (pokemonData && !chosenTeam.some(pokemon => pokemon.id === pokemonData.id)) {
-      setChosenTeam(prevTeam => [...prevTeam, pokemonData]);
+      const newTeam = structuredClone(chosenTeam);
+      newTeam.push(pokemonData);
+      setChosenTeam(newTeam);
     } else {
       toast.warn('This Pokémon is already in your team!');
     }
+  };
+
+  const handleTeamRemove = (pokemonId) => {
+    const newTeam = chosenTeam.filter(pokemon => pokemon.id !== pokemonId);
+    setChosenTeam(newTeam);
   };
 
   const toPascalCase = (text) => {
@@ -104,23 +112,15 @@ function PokemonFinder() {
 
         {pokemonData && <PokemonDetails pokemonData={pokemonData} />}
       </div>
-      <div className='pokemon-team-builder'>
-        <h1 className='builder-title'>Pokémon Team Builder</h1>
-        <div className='team-grid'>
-          {chosenTeam.map(pokemon => (
-            <div key={pokemon.id} className='team-item'>
-              <img
-                src={pokemon.sprites.front_default}
-                alt={`${pokemon.name} sprite`}
-              />
-              <h4>{toPascalCase(pokemon.name)}</h4>
-            </div>
-          ))}
-        </div>
-        {pokemonData && (
-          <Button variant="contained" onClick={handleTeamAdd}>Add to Team</Button>
-        )}
-      </div>
+      
+      <PokemonTeamBuilder
+        pokemonData={pokemonData}
+        chosenTeam={chosenTeam}
+        onAddToTeam={handleTeamAdd}
+        onRemoveFromTeam={handleTeamRemove}
+        toPascalCase={toPascalCase}
+      />
+      
       <ToastContainer />
     </div>
   );
