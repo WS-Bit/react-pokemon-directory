@@ -17,7 +17,7 @@ const PokemonTeamBuilder = ({ pokemonData, chosenTeam, onAddToTeam, onRemoveFrom
             <Button
               variant="outlined"
               color="secondary"
-              onClick={() => onRemoveFromTeam(pokemon.id)} // Add the onClick handler for removal
+              onClick={() => onRemoveFromTeam(pokemon.id)}
             >
               Remove
             </Button>
